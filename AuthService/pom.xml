@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Spring Boot Parent Dependency -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>com.Loan</groupId>
+	<artifactId>AuthService</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>AuthService</name>
+	<description>Loan Application</description>
+
+	<properties>
+		<java.version>17</java.version> <!-- Defines Java version for the project -->
+	</properties>
+
+	<dependencies>
+		<!-- Spring Boot JPA Dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!--
+			✅ Provides Spring Data JPA for working with databases.
+			✅ Includes Hibernate as the default JPA implementation.
+		-->
+
+		<!-- Spring Boot Security Dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!--
+			✅ Enables Spring Security for authentication and authorization.
+			✅ Helps in securing endpoints with JWT or other methods.
+		-->
+
+		<!-- Spring Boot Web Dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!--
+			✅ Provides necessary dependencies for creating REST APIs.
+			✅ Includes embedded Tomcat server for running the application.
+		-->
+
+		<!-- JWT Implementation Dependency -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<!--
+			✅ Provides core JWT token processing functionalities.
+			✅ Used for generating, signing, and verifying JWT tokens.
+		-->
+
+		<!-- JWT API Dependency -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<!--
+			✅ Contains interfaces for working with JWT tokens.
+			✅ Required along with `jjwt-impl` to fully utilize JWT features.
+		-->
+
+		<!-- PostgreSQL Database Dependency -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!--
+			✅ PostgreSQL JDBC driver for connecting and interacting with PostgreSQL database.
+			✅ Required for database communication in production.
+		-->
+
+		<!-- Lombok Dependency -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!--
+			✅ Reduces boilerplate code (e.g., getters, setters, constructors).
+			✅ `@Getter`, `@Setter`, `@NoArgsConstructor`, `@AllArgsConstructor`, etc., can be used.
+		-->
+
+		<!-- Spring Boot Testing Dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!--
+			✅ Provides testing libraries for unit and integration tests.
+			✅ Includes JUnit, Mockito, and other testing tools.
+		-->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Maven Compiler Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<!--
+				✅ Ensures proper compilation of Lombok-processed classes.
+				✅ Required for annotation processing at compile time.
+			-->
+
+			<!-- Spring Boot Maven Plugin -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<!--
+				✅ Helps in building and running Spring Boot applications using Maven.
+				✅ Excludes Lombok from the final build since it's only needed at compile-time.
+			-->
+		</plugins>
+	</build>
+
+</project>
