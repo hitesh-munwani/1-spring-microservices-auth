@@ -1,6 +1,6 @@
-package com.Loan.AuthService.Repository;
+package com.Loan.AuthService.repository;
 
-import com.Loan.AuthService.Model.User;
+import com.Loan.AuthService.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

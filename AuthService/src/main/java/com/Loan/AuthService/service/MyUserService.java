@@ -1,4 +1,4 @@
-package com.Loan.AuthService.Service;
+package com.Loan.AuthService.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -15,7 +15,7 @@ public class MyUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        com.Loan.AuthService.Model.User byUserName = userService.findByUserName(username);
+        com.Loan.AuthService.model.User byUserName = userService.findByUserName(username);
         if (byUserName == null) {
             throw new UsernameNotFoundException("User not found");
         }

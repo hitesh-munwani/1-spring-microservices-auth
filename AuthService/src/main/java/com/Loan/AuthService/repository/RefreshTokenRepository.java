@@ -1,7 +1,7 @@
 // RefreshTokenRepository.java
-package com.Loan.AuthService.Repository;
+package com.Loan.AuthService.repository;
 
-import com.Loan.AuthService.Model.RefreshToken;
+import com.Loan.AuthService.model.RefreshToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

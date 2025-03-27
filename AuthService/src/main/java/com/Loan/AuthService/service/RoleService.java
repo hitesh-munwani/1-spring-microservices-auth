@@ -1,7 +1,7 @@
-package com.Loan.AuthService.Service;
+package com.Loan.AuthService.service;
 
-import com.Loan.AuthService.Model.Role;
-import com.Loan.AuthService.Repository.RoleRepo;
+import com.Loan.AuthService.model.Role;
+import com.Loan.AuthService.repository.RoleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class RoleService {

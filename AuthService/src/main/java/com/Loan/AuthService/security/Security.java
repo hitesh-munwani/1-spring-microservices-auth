@@ -16,15 +16,15 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-
 public class Security {
+
     @Autowired
     private JwtAuthenticationFilter filter;
 
     @Bean
-//    @Order(1)
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
+                // Disable CSRF and stateless session management for REST API endpoints (no session)
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
@@ -32,7 +32,7 @@ public class Security {
                         .anyRequest().permitAll()
                 )
                 .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
-//                .httpBasic(Customizer.withDefaults())
+//                .httpBasic(Customizer.withDefaults())   // for basic authentication (username and password)
                 .build();
     }
 

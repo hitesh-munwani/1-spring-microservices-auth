@@ -1,6 +1,6 @@
 package com.Loan.AuthService.jwtUtils;
 
-import com.Loan.AuthService.Service.MyUserService;
+import com.Loan.AuthService.service.MyUserService;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -38,13 +38,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         // Check if the Authorization header contains a Bearer token
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             jwtToken = authorizationHeader.substring(7); // Extract token
-            try {
-                username = jwtUtil.extractUsername(jwtToken);
-            } catch (ExpiredJwtException e) {
-                logger.error("JWT Token Expired: " + e.getMessage());
-            } catch (Exception e) {
-                logger.error("JWT Token Error: " + e.getMessage());
-            }
+            try { username = jwtUtil.extractUsername(jwtToken);
+            } catch (ExpiredJwtException e) { logger.error("JWT Token Expired: " + e.getMessage());
+            } catch (Exception e) { logger.error("JWT Token Error: " + e.getMessage()); }
         }
 
         // Validate token and set authentication

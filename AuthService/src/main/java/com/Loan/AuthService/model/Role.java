@@ -1,4 +1,4 @@
-package com.Loan.AuthService.Model;
+package com.Loan.AuthService.model;
 
 
 import jakarta.persistence.*;

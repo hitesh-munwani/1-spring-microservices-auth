@@ -1,9 +1,8 @@
-package com.Loan.AuthService.Model;
+package com.Loan.AuthService.model;
 
 import jakarta.persistence.*;
 
 import java.time.Instant;
-import java.util.Optional;
 
 @Entity
 @Table(name = "refresh_tokens")

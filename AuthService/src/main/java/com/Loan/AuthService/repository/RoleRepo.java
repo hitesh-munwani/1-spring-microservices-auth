@@ -1,6 +1,6 @@
-package com.Loan.AuthService.Repository;
+package com.Loan.AuthService.repository;
 
-import com.Loan.AuthService.Model.Role;
+import com.Loan.AuthService.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepo extends JpaRepository<Role,Long> {

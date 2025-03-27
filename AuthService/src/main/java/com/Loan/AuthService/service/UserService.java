@@ -1,16 +1,14 @@
-package com.Loan.AuthService.Service;
+package com.Loan.AuthService.service;
 
-import com.Loan.AuthService.Controller.UserController;
-import com.Loan.AuthService.Model.RefreshToken;
-import com.Loan.AuthService.Model.User;
-import com.Loan.AuthService.Repository.UserRepo;
+import com.Loan.AuthService.model.RefreshToken;
+import com.Loan.AuthService.model.User;
+import com.Loan.AuthService.repository.UserRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.Loan.AuthService.Repository.RefreshTokenRepository;
+import com.Loan.AuthService.repository.RefreshTokenRepository;
 
 import java.time.Instant;
 import java.util.List;
