@@ -6,7 +6,16 @@
       <list>
         <option value="$PROJECT_DIR$/AuthService/pom.xml" />
         <option value="$PROJECT_DIR$/UserService/pom.xml" />
+        <option value="$USER_HOME$/Downloads/ApiGateWay/ApiGateWay/pom.xml" />
+        <option value="$PROJECT_DIR$/ApiGateWay/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Api_Gateway (2)/Api_Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/Api_Gateway/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ApiGateWay/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
